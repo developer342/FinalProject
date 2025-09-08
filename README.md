@@ -1,1 +1,1 @@
-# AppProject
+# 서버 개발용

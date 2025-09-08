@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mysql://finalprojectdb.mysql.database.azure.com:3306/finalserver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: minhyoung
+    password: Kim@1002
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
