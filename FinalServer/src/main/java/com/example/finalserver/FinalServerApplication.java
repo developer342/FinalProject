@@ -1,4 +1,4 @@
-package com.example.FinalServer;
+package com.example.finalserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
