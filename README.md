@@ -1,2 +1,2 @@
-# 개발 병합용
+# FinalAppProject
 
