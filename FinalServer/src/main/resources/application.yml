@@ -20,3 +20,4 @@ jwt:
   secret: ${JWT_SECRET:change-me}        # 환경변수 권장
   access-token-validity-seconds: 900     # 15분
   refresh-token-validity-days: 14        # 14일
+
