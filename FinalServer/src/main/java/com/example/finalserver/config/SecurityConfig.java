@@ -1,4 +1,4 @@
-package com.example.finalserver.config;
+package com.example.FinalServer.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;

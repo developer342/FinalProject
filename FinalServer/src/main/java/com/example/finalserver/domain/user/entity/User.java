@@ -1,4 +1,4 @@
-package com.example.finalserver.domain.user.entity;
+package com.example.FinalServer.domain.user.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -18,4 +18,9 @@ public class User {
 
   @Column(nullable = false)
   private String password; // BCrypt 해시 저장
+
+  // 정적 팩토리
+  public static User of(String email, String hashedPassword) {
+    return new User(null, email, hashedPassword);
+  }
 }
