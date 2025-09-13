@@ -6,6 +6,9 @@ import com.example.FinalServer.auth.dto.SignupRequest;
 import com.example.FinalServer.auth.dto.TokenResponse;
 import com.example.FinalServer.auth.util.JwtTokenProvider;
 import com.example.FinalServer.auth.util.RefreshTokenUtil;
+import com.example.FinalServer.common.exception.DuplicateEmailException;
+import com.example.FinalServer.common.exception.InvalidCredentialsException;
+import com.example.FinalServer.common.exception.InvalidRefreshTokenException;
 import com.example.FinalServer.domain.token.entity.RefreshToken;
 import com.example.FinalServer.domain.token.repository.RefreshTokenRepository;
 import com.example.FinalServer.domain.user.entity.User;
@@ -36,7 +39,7 @@ public class AuthService {
   @Transactional
   public void signup(SignupRequest req) {
     userRepository.findByEmail(req.getEmail())
-                  .ifPresent(u -> { throw new IllegalArgumentException("email already exists"); });
+                  .ifPresent(u -> { throw new DuplicateEmailException("이미 사용 중인 이메일입니다."); });
 
     String encoded = passwordEncoder.encode(req.getPassword());
     User user = User.of(req.getEmail(), encoded);
@@ -47,10 +50,10 @@ public class AuthService {
   @Transactional
   public TokenResponse login(LoginRequest req) {
     User user = userRepository.findByEmail(req.getEmail())
-                              .orElseThrow(() -> new IllegalArgumentException("invalid credentials"));
+                              .orElseThrow(() -> new InvalidCredentialsException("이메일 또는 비밀번호가 올바르지 않습니다."));
 
     if (!passwordEncoder.matches(req.getPassword(), user.getPassword())) {
-      throw new IllegalArgumentException("invalid credentials");
+      throw new InvalidCredentialsException("이메일 또는 비밀번호가 올바르지 않습니다.");
     }
 
     String access = jwtTokenProvider.createToken(user.getId());
@@ -70,10 +73,10 @@ public class AuthService {
   public TokenResponse reissue(RefreshTokenRequest req) {
     String hash = RefreshTokenUtil.hash(req.getRefreshToken());
     RefreshToken old = refreshTokenRepository.findByTokenHash(hash)
-                                             .orElseThrow(() -> new IllegalArgumentException("invalid refresh"));
+                                             .orElseThrow(() -> new InvalidRefreshTokenException("리프레시 토큰이 유효하지 않습니다."));
 
     if (old.getExpiresAt().isBefore(Instant.now())) {
-      throw new IllegalArgumentException("invalid refresh");
+      throw new InvalidRefreshTokenException("리프레시 토큰이 만료되었습니다.");
     }
 
     refreshTokenRepository.delete(old);
