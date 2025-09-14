@@ -1,5 +1,9 @@
 package com.example.finalapp.core.network;
 
+import com.example.finalapp.auth.dto.LoginRequest;
+import com.example.finalapp.auth.dto.SignupRequest;
+import com.example.finalapp.auth.dto.TokenResponse;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
