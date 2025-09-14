@@ -37,6 +37,8 @@ public class RetrofitClient {
               .connectTimeout(15, TimeUnit.SECONDS)
               .readTimeout(15, TimeUnit.SECONDS)
               .writeTimeout(15, TimeUnit.SECONDS)
+              .addInterceptor(new AuthInterceptor())      // Bearer 자동 주입
+              .authenticator(new TokenAuthenticator())    // 401 → 자동 재발급
               .addInterceptor(logging)
               .build();
 
