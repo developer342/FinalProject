@@ -23,7 +23,7 @@ public class RetrofitClient {
     if (deviceBaseUrl == null || !deviceBaseUrl.endsWith("/")) {
       throw new IllegalArgumentException("Base URL must end with '/'");
     }
-    BASE_URL = "192.168.1.123";
+    BASE_URL = "";
     retrofit = null; // 재생성 트리거
     Log.i("RetrofitClient", "BASE_URL switched to: " + BASE_URL);
   }
