@@ -44,8 +44,8 @@ public class AuthRepository {
   }
 
   // 리프레시 → 토큰 갱신 (수동 호출이 필요할 때만)
-  public void refresh(RefreshTokenRequest refreshToken, Callback<TokenResponse> callback) {
-    api.refresh(refreshToken).enqueue(new Callback<TokenResponse>() {
+  public void refresh(String refreshToken, Callback<TokenResponse> callback) {
+    api.refresh(new RefreshTokenRequest(refreshToken)).enqueue(new Callback<TokenResponse>() {
       @Override public void onResponse(Call<TokenResponse> call, Response<TokenResponse> resp) {
         if (resp.isSuccessful() && resp.body() != null) {
           // 토큰 갱신
@@ -60,8 +60,8 @@ public class AuthRepository {
   }
 
   // 로그아웃 → 서버 호출 성공 시 토큰 삭제
-  public void logout(RefreshTokenRequest refreshToken, Callback<Void> callback) {
-    api.logout(refreshToken).enqueue(new Callback<Void>() {
+  public void logout(String refreshToken, Callback<Void> callback) {
+    api.logout(new RefreshTokenRequest(refreshToken)).enqueue(new Callback<Void>() {
       @Override public void onResponse(Call<Void> call, Response<Void> resp) {
         if (resp.isSuccessful()) {
           // 토큰 삭제
