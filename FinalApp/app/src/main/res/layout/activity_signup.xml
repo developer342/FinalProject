@@ -7,6 +7,13 @@
     android:layout_height="match_parent">
 
   <EditText
+      android:id="@+id/etNickname"
+      android:hint="Nickname"
+      android:inputType="textPersonName"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
+
+  <EditText
       android:id="@+id/etEmail"
       android:hint="Email"
       android:inputType="textEmailAddress"

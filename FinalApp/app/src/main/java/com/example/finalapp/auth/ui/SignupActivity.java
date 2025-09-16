@@ -20,7 +20,7 @@ import retrofit2.Response;
 
 public class SignupActivity extends AppCompatActivity {
 
-  private EditText etEmail, etPassword;
+  private EditText etEmail, etPassword, etNickname;
   private Button btnSignup;
   private AuthRepository authRepo;
 
@@ -34,17 +34,20 @@ public class SignupActivity extends AppCompatActivity {
 
     etEmail = findViewById(R.id.etEmail);
     etPassword = findViewById(R.id.etPassword);
+    etNickname = findViewById(R.id.etNickname);
     btnSignup = findViewById(R.id.btnSignup);
 
     btnSignup.setOnClickListener(v -> {
       String email = etEmail.getText().toString().trim();
       String pw = etPassword.getText().toString().trim();
+      String nickname = etNickname.getText().toString().trim();
+
       if (email.isEmpty() || pw.isEmpty()) {
         Toast.makeText(this, "이메일/비밀번호를 입력하세요", Toast.LENGTH_SHORT).show();
         return;
       }
       btnSignup.setEnabled(false);
-      authRepo.signup(new SignupRequest(email, pw), new Callback<Void>() {
+      authRepo.signup(new SignupRequest(email, pw, nickname), new Callback<Void>() {
         @Override public void onResponse(Call<Void> call, Response<Void> resp) {
           btnSignup.setEnabled(true);
           if (resp.isSuccessful()) {

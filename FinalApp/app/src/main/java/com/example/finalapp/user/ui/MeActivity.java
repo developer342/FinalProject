@@ -46,7 +46,8 @@ public class MeActivity extends AppCompatActivity {
       @Override public void onResponse(Call<UserProfileResponse> call, Response<UserProfileResponse> resp) {
         if (resp.isSuccessful() && resp.body() != null) {
           UserProfileResponse u = resp.body();
-          tvInfo.setText("ID: " + u.getId() + "\nEmail: " + u.getEmail());
+          tvInfo.setText("\nNickname: " + (u.getNickname() != null ? u.getNickname() : "")
+          + "\nEmail: " + u.getEmail());
         } else {
           tvInfo.setText("불러오기 실패(" + resp.code() + ")");
         }
