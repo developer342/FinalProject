@@ -18,6 +18,6 @@ public class UserQueryService {
   public UserProfileResponse getMe(Long userId) {
     User user = userRepository.findById(userId)
                               .orElseThrow(() -> new InvalidCredentialsException("인증 정보를 확인할 수 없습니다."));
-    return new UserProfileResponse(user.getId(), user.getEmail());
+    return new UserProfileResponse(user.getId(), user.getEmail(), user.getNickname());
   }
 }

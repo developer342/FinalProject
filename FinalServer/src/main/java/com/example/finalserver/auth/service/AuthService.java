@@ -42,7 +42,7 @@ public class AuthService {
                   .ifPresent(u -> { throw new DuplicateEmailException("이미 사용 중인 이메일입니다."); });
 
     String encoded = passwordEncoder.encode(req.getPassword());
-    User user = User.of(req.getEmail(), encoded);
+    User user = User.of(req.getEmail(), encoded, req.getNickname());
     userRepository.save(user);
   }
 
