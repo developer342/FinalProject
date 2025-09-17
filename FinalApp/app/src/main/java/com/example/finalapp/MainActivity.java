@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.finalapp.auth.ui.LoginActivity;
 import com.example.finalapp.auth.ui.SignupActivity;
+import com.example.finalapp.core.network.RetrofitClient;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
 
     //실기기에서 테스트할 때 PC IP로 교체
-    //RetrofitClient.setBaseUrlForDevice("http://192.168.1.123:8080/api/");
+    RetrofitClient.setBaseUrlForDevice("http://<자기 PC IP>:8080/api/");
     setContentView(R.layout.activity_main);
 
     Button btnGoLogin = findViewById(R.id.btnGoLogin);

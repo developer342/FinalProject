@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
-  <domain-config cleartextTrafficPermitted="true">
-    <!-- 에뮬레이터 localhost -->
-    <domain includeSubdomains="true">10.0.2.2</domain>
-    <!-- 필요 시 실기기 테스트용 PC IP도 추가 -->
-<!--    <domain includeSubdomains="true">192.168.0.15</domain>-->
-  </domain-config>
+  <!-- 모든 호스트에 대해 HTTP(클리어텍스트) 허용 -->
+  <base-config cleartextTrafficPermitted="true" />
 </network-security-config>
