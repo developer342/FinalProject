@@ -1,4 +1,5 @@
-package com.example.FinalServer.config;
+package com.example.finalserver.config;
+
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -30,6 +31,7 @@ public class SecurityConfig {
             .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // 무상태
             .authorizeHttpRequests(auth -> auth
                     .requestMatchers("/api/auth/**").permitAll() // 공개경로
+                    .requestMatchers("/auth/**").permitAll() // 공개경로
                     .anyRequest().authenticated() // 나머지 인증필요
             )
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class); // JWT필터적용

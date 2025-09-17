@@ -1,4 +1,5 @@
-package com.example.FinalServer.auth.dto;
+package com.example.finalserver.auth.dto;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

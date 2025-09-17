@@ -1,6 +1,7 @@
-package com.example.FinalServer.domain.user.repository;
+package com.example.finalserver.domain.user.repository;
 
-import com.example.FinalServer.domain.user.entity.User;
+import com.example.finalserver.domain.user.entity.User;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
