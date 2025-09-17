@@ -20,11 +20,18 @@ public class RetrofitClient {
 
   // 실기기용: 같은 Wi-Fi의 PC IP로 교체
   public static synchronized void setBaseUrlForDevice(String deviceBaseUrl) {
-    if (deviceBaseUrl == null || !deviceBaseUrl.endsWith("/")) {
+    if (deviceBaseUrl == null) {
+      throw new IllegalArgumentException("Base URL must not be null");
+    }
+    if (!deviceBaseUrl.startsWith("http://") && !deviceBaseUrl.startsWith("https://")) {
+      throw new IllegalArgumentException("Base URL must start with http:// or https://");
+    }
+    if (!deviceBaseUrl.endsWith("/")) {
       throw new IllegalArgumentException("Base URL must end with '/'");
     }
-    BASE_URL = "";
-    retrofit = null; // 재생성 트리거
+
+    BASE_URL = deviceBaseUrl;   // 인자 그대로 반영
+    retrofit = null;            // 재생성 트리거
     Log.i("RetrofitClient", "BASE_URL switched to: " + BASE_URL);
   }
 

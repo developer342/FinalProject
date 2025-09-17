@@ -52,7 +52,6 @@ public class LoginActivity extends AppCompatActivity {
     etEmail = findViewById(R.id.etEmail);
     etPassword = findViewById(R.id.etPassword);
     btnLogin = findViewById(R.id.btnLogin);
-    btnGotoSignup = findViewById(R.id.btnGotoSignup);
 
     btnLogin.setOnClickListener(v -> {
       String email = etEmail.getText().toString().trim();
@@ -100,7 +99,5 @@ public class LoginActivity extends AppCompatActivity {
       });
     });
 
-    btnGotoSignup.setOnClickListener(v ->
-            startActivity(new Intent(this, SignupActivity.class)));
   }
 }
