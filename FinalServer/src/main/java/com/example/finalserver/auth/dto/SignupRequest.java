@@ -1,5 +1,6 @@
 package com.example.finalserver.auth.dto;
 
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -16,4 +17,6 @@ public class SignupRequest {
 
   @NotBlank
   private String password;
+  
+  private String nickname;
 }

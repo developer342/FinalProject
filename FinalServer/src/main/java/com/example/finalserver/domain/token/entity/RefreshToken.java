@@ -1,6 +1,7 @@
 package com.example.finalserver.domain.token.entity;
 
 import com.example.finalserver.domain.user.entity.User;
+
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

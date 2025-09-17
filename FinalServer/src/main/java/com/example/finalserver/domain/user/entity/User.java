@@ -18,4 +18,16 @@ public class User {
 
   @Column(nullable = false)
   private String password; // BCrypt 해시 저장
+
+  @Column
+  private String nickname;
+
+  public void changeNickname(String nickname) {
+    this.nickname = nickname;
+  }
+
+  // 정적 팩토리
+  public static User of(String email, String hashedPassword, String nickname) {
+    return new User(null, email, hashedPassword, nickname);
+  }
 }

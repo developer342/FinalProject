@@ -1,5 +1,6 @@
 package com.example.finalserver.auth.dto;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

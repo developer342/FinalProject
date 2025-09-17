@@ -1,5 +1,6 @@
 package com.example.finalserver.config;
 
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,6 +30,7 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable()) // CSRF비활성화
             .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // 무상태
             .authorizeHttpRequests(auth -> auth
+                    .requestMatchers("/api/auth/**").permitAll() // 공개경로
                     .requestMatchers("/auth/**").permitAll() // 공개경로
                     .anyRequest().authenticated() // 나머지 인증필요
             )
