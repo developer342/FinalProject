@@ -20,3 +20,9 @@ jwt:
   secret: ${JWT_SECRET:change-me-change-me-change-me-change-me}
   access-token-validity-seconds: 900     # 15분
   refresh-token-validity-days: 14        # 14일
+
+haccp:
+  api:
+    key: XY1pM61yFK5wf5DA3P7Tn6G/TOsF1Ne3OXFSXB9ZKreYixl/ytbZTzQrZEh88SPDn8pOrVdIO55HqVD2b4tcPg==
+    base-url: https://apis.data.go.kr/B553748/CertImgListServiceV3
+    timeout-seconds: 5
