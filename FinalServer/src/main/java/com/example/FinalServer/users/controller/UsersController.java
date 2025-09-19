@@ -1,8 +1,5 @@
 package com.example.FinalServer.users.controller;
 
-import com.example.FinalServer.common.exception.InvalidCredentialsException;
-import com.example.FinalServer.domain.user.entity.User;
-import com.example.FinalServer.domain.user.repository.UserRepository;
 import com.example.FinalServer.users.dto.UserProfileResponse;
 import com.example.FinalServer.users.service.UserQueryService;
 import lombok.RequiredArgsConstructor;
