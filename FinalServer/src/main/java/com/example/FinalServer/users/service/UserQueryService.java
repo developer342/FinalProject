@@ -2,8 +2,8 @@ package com.example.FinalServer.users.service;
 
 
 import com.example.FinalServer.common.exception.InvalidCredentialsException;
-import com.example.FinalServer.domain.user.entity.User;
-import com.example.FinalServer.domain.user.repository.UserRepository;
+import com.example.FinalServer.auth.entity.user.entity.User;
+import com.example.FinalServer.auth.entity.user.repository.UserRepository;
 import com.example.FinalServer.users.dto.UserProfileResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.example.FinalServer.auth.util;
+package com.example.FinalServer.common.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

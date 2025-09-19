@@ -1,4 +1,4 @@
-package com.example.FinalServer.auth.util;
+package com.example.FinalServer.common.util;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

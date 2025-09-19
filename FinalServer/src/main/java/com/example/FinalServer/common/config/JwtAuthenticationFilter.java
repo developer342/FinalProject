@@ -1,6 +1,6 @@
-package com.example.FinalServer.config;
+package com.example.FinalServer.common.config;
 
-import com.example.FinalServer.auth.util.JwtTokenProvider;
+import com.example.FinalServer.common.util.JwtTokenProvider;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

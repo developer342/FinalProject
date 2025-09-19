@@ -1,4 +1,4 @@
-package com.example.FinalServer.domain.user.entity;
+package com.example.FinalServer.auth.entity.user.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

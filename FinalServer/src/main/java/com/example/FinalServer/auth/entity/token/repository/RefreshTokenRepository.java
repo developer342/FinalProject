@@ -1,6 +1,6 @@
-package com.example.FinalServer.domain.token.repository;
+package com.example.FinalServer.auth.entity.token.repository;
 
-import com.example.FinalServer.domain.token.entity.RefreshToken;
+import com.example.FinalServer.auth.entity.token.entity.RefreshToken;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
