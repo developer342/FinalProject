@@ -1,7 +1,7 @@
-package com.example.FinalServer.common.config;
+package com.example.app.common.config;
 
-
-
+import com.example.FinalServer.common.config.HaccpApiProperties;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
@@ -11,22 +11,18 @@ import reactor.netty.http.client.HttpClient;
 import java.time.Duration;
 
 @Configuration
-public class WebClientConfig {
+@RequiredArgsConstructor
+public class HaccpWebClientConfig {
 
   private final HaccpApiProperties properties;
 
-  public WebClientConfig(HaccpApiProperties properties) {
-    this.properties = properties;
-  }
-
   @Bean
   public WebClient haccpWebClient() {
-    HttpClient httpClient = HttpClient.create()
+    HttpClient http = HttpClient.create()
             .responseTimeout(Duration.ofSeconds(properties.getTimeoutSeconds()));
-
     return WebClient.builder()
             .baseUrl(properties.getBaseUrl())
-            .clientConnector(new ReactorClientHttpConnector(httpClient))
+            .clientConnector(new ReactorClientHttpConnector(http))
             .build();
   }
 }
