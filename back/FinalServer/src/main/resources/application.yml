@@ -1,0 +1,34 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://finalprojectdb.mysql.database.azure.com:3306/finalserver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: minhyoung
+    password: Kim@1003
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+jwt:
+  secret: ${JWT_SECRET:change-me-change-me-change-me-change-me}
+  access-token-validity-seconds: 900     # 15분
+  refresh-token-validity-days: 14        # 14일
+
+haccp:
+  api:
+    key: XY1pM61yFK5wf5DA3P7Tn6G/TOsF1Ne3OXFSXB9ZKreYixl/ytbZTzQrZEh88SPDn8pOrVdIO55HqVD2b4tcPg==
+    base-url: https://apis.data.go.kr/B553748/CertImgListServiceV3
+    timeout-seconds: 5
+  runner:
+    enabled: false
+
+openai:
+  api:
+    key: ${OPENAI_API_KEY}
