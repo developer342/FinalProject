@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+  <!-- 상단 파일 종류 선택 -->
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:orientation="horizontal"
+      android:layout_marginBottom="8dp">
+
+    <Button
+        android:id="@+id/btnCsvTab"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="CSV 파일"
+        android:backgroundTint="#2196F3"
+        android:textColor="@android:color/white" />
+
+    <Space
+        android:layout_width="8dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnXlsxTab"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="엑셀 파일"
+        android:backgroundTint="#BDBDBD"
+        android:textColor="#222222" />
+  </LinearLayout>
+
+  <!-- 빈 목록 안내 -->
+  <TextView
+      android:id="@+id/tvEmpty"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="저장된 파일이 없습니다."
+      android:textColor="#666666"
+      android:textSize="16sp"
+      android:gravity="center"
+      android:layout_marginTop="16dp"
+      android:visibility="gone" />
+
+  <!-- 파일 목록 -->
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/recyclerFiles"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:overScrollMode="always"
+      android:scrollbars="vertical" />
+
+</LinearLayout>

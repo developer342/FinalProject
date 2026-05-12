@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="25dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <!-- 상단 제목 -->
+  <TextView
+      android:id="@+id/tvHomeTitle"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="가계부 홈"
+      android:textSize="22sp"
+      android:textStyle="bold"
+      android:textAlignment="center"
+      android:paddingTop="12dp"
+      android:paddingBottom="16dp" />
+
+  <!-- 탭 영역 -->
+  <com.google.android.material.tabs.TabLayout
+      android:id="@+id/tabLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:tabIndicatorColor="@color/black"
+      app:tabSelectedTextColor="@color/black"
+      app:tabTextColor="@android:color/darker_gray" />
+
+  <!-- 탭 내용 영역 -->
+  <androidx.viewpager2.widget.ViewPager2
+      android:id="@+id/viewPager"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1" />
+
+  <!-- 하단 내정보 / 로그아웃 -->
+  <LinearLayout
+      android:id="@+id/groupProfileActions"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center_vertical|end"
+      android:orientation="horizontal"
+      android:paddingBottom="8dp"
+      android:paddingStart="16dp"
+      android:paddingEnd="16dp">
+
+    <!-- 왼쪽: 로그인 상태 -->
+    <TextView
+        android:id="@+id/tvLoginStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="로그인 필요"
+        android:textColor="#333333"
+        android:textSize="15sp"
+        android:gravity="start" />
+
+    <!-- 오른쪽: 내정보 / 로그아웃 -->
+    <Button
+        android:id="@+id/btnMyInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="내정보" />
+
+    <Space
+        android:layout_width="12dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그아웃" />
+  </LinearLayout>
+
+</LinearLayout>

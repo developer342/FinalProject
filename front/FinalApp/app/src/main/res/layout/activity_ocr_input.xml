@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+  <!-- OCR 결과 + 내보내기 버튼 오버레이 -->
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:background="#EEEEEE"
+      android:padding="8dp">
+
+    <!-- OCR 결과 스크롤 가능 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:overScrollMode="always">
+
+      <TextView
+          android:id="@+id/tvAllText"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="14sp"
+          android:textColor="#222222"
+          android:paddingBottom="40dp" />
+    </ScrollView>
+
+    <!-- 파일 내보내기 버튼 그룹 (OCR창 내부 하단 우측) -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:orientation="horizontal"
+        android:layout_margin="8dp">
+
+      <Button
+          android:id="@+id/btnExportCsv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="CSV"
+          android:textSize="12sp"
+          android:paddingHorizontal="10dp"
+          android:paddingVertical="4dp"
+          android:visibility="gone" />
+
+      <View
+          android:layout_width="8dp"
+          android:layout_height="match_parent" />
+
+      <Button
+          android:id="@+id/btnExportXlsx"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="XLSX"
+          android:textSize="12sp"
+          android:paddingHorizontal="10dp"
+          android:paddingVertical="4dp"
+          android:visibility="gone" />
+    </LinearLayout>
+  </FrameLayout>
+
+  <!-- 서버 요약/상태 (스크롤 가능) -->
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="120dp"
+      android:layout_marginTop="8dp"
+      android:background="#F5F5F5"
+      android:padding="6dp"
+      android:scrollbars="vertical">
+
+    <TextView
+        android:id="@+id/tvSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#424242" />
+  </ScrollView>
+
+  <!-- GPT 정제 버튼 -->
+  <Button
+      android:id="@+id/btnRefineText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="GPT 정제 시작"
+      android:layout_marginTop="8dp"
+      android:visibility="gone" />
+
+  <!-- 서버 저장 버튼 -->
+  <Button
+      android:id="@+id/btnSendToServer"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="서버 전송"
+      android:layout_marginTop="6dp" />
+
+</LinearLayout>

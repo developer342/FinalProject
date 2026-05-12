@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+  <external-files-path
+      name="ledger_downloads"
+      path="Download/" />
+  <cache-path
+      name="ledger_cache"
+      path="ledger/" />
+  <files-path
+      name="ledger_files"
+      path="ledger/" />
+  <paths>
+    <external-files-path
+        name="external_files"
+        path="." />
+  </paths>
+
+  <cache-path name="ledger_camera_cache" path="images/" />
+</paths>

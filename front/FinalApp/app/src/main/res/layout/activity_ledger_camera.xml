@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+  <!-- 상태 표시 -->
+  <TextView
+      android:id="@+id/tvStatus"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="카메라 대기 중"
+      android:textSize="14sp"
+      android:layout_marginBottom="8dp"/>
+
+  <!-- 진행 표시 -->
+  <ProgressBar
+      android:id="@+id/progress"
+      style="?android:attr/progressBarStyle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:visibility="gone"/>
+
+  <!-- 촬영 버튼 -->
+  <Button
+      android:id="@+id/btnCapture"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="촬영하기"
+      android:layout_marginTop="12dp"/>
+</LinearLayout>
